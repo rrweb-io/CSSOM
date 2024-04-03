@@ -6,6 +6,7 @@ exports.files = [
 	"CSSConditionRule",
 	"MediaList",
 	"CSSMediaRule",
+	"CSSContainerRule",
 	"CSSSupportsRule",
 	"CSSImportRule",
 	"CSSFontFaceRule",
