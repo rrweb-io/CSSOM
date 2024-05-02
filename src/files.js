@@ -11,6 +11,7 @@ exports.files = [
 	"CSSImportRule",
 	"CSSFontFaceRule",
 	"CSSHostRule",
+	"CSSStartingStyleRule",
 	"StyleSheet",
 	"CSSStyleSheet",
 	"CSSKeyframesRule",
