@@ -1220,6 +1220,39 @@ var TESTS = [
 		})()
 	},
 	{
+		input: "@container sidebar (min-width: 400px) { body{max-width:480px} }",
+		result: (function() {
+			var result = {
+				cssRules: [
+					{
+						containerText: "sidebar (min-width: 400px)",
+						cssRules: [
+							{
+								selectorText: "body",
+								style: {
+									0: "max-width",
+									"max-width": "480px",
+									__starts: 64,
+									length: 1
+								},
+								__starts: 60,
+								__ends: 81
+							}
+						],
+						parentRule: null,
+						__starts: 0,
+						__ends: 82
+					}
+				],
+				parentStyleSheet: null
+			};
+			result.cssRules[0].parentStyleSheet = result.cssRules[0].cssRules[0].parentStyleSheet = result;
+			result.cssRules[0].cssRules[0].style.parentRule = result.cssRules[0].cssRules[0];
+			result.cssRules[0].cssRules[0].parentRule = result.cssRules[0];
+			return result;
+		})()
+	},
+	{
 		input: "a{}@-moz-document/**/url-prefix(http://www.w3.org/Style/){body { color: purple; background: yellow; }}",
 		result: (function(){
 			var result = {
