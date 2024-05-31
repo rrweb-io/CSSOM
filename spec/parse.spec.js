@@ -1000,6 +1000,80 @@ var TESTS = [
 		})()
 	},
 	{
+		input: "@starting-style { @media screen { body { background: red; } } }",
+		result: (function() {
+			var result = {
+				cssRules: [
+				{
+					cssRules: {
+						0: {
+							cssRules: {
+								0: {
+									parentRule: "../..",
+									parentStyleSheet: "../../../../../..",
+									selectorText: "body",
+									style: {
+										0: "background",
+										length: 1,
+										parentRule: "..",
+										background: "red",
+									},
+								},
+							},
+							parentRule: null,
+							media: {
+								0: "screen",
+								length: 1
+							}
+						},
+					},
+					parentRule: null,
+				},
+				],
+				parentStyleSheet: null,
+			};
+			result.cssRules[0].parentStyleSheet = result.cssRules[0].cssRules[0].parentStyleSheet = result;
+			return result;
+		})()
+	},
+	{
+		input: "@media screen { @starting-style { body { background: red; } } }",
+		result: (function() {
+			var result = {
+				cssRules: [
+				{
+					cssRules: {
+					0: {
+						cssRules: {
+							0: {
+								parentRule: "../..",
+								parentStyleSheet: "../../../../../..",
+								selectorText: "body",
+								style: {
+									0: "background",
+									length: 1,
+									parentRule: "..",
+									background: "red",
+								},
+							},
+						},
+						parentRule: null,
+					},
+				},
+            parentRule: null,
+			media: {
+				0: "screen",
+				length: 1
+			}
+          },
+        ],
+        parentStyleSheet: null,
+      };
+			result.cssRules[0].parentStyleSheet = result.cssRules[0].cssRules[0].parentStyleSheet = result;
+			return result;
+		})()
+	},
+	{
 		// Non-vendor prefixed @keyframes rule, from Twitter Bootstrap (progress-bars):
 		input: '@keyframes progress-bar-stripes {\n  from  { background-position: 0 0; }\n  to    { background-position: 40px 0; }\n}',
 		result: (function () {
