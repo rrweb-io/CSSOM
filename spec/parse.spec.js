@@ -1328,7 +1328,35 @@ var TESTS = [
 
 			return result;
 		})()
-	}
+	},
+	{
+		input: "@layer custom-layer { div { display: block; } }",
+		result: (function() {
+			var result = {
+				cssRules: [
+					{
+						layerName: "custom-layer",
+						cssRules: [
+							{
+								selectorText: "div",
+								style: {
+									0: "display",
+									display: "block",
+									length: 1
+								},
+							}
+						],
+						parentRule: null,
+					}
+				],
+				parentStyleSheet: null
+			};
+			result.cssRules[0].parentStyleSheet = result.cssRules[0].cssRules[0].parentStyleSheet = result;
+			result.cssRules[0].cssRules[0].parentRule = result.cssRules[0];
+			result.cssRules[0].cssRules[0].style.parentRule = result.cssRules[0].cssRules[0];
+			return result;
+		})()
+	},
 ];
 
 
