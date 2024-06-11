@@ -1,5 +1,11 @@
 # rrweb-cssom
 
+## 0.7.1
+
+### Patch Changes
+
+- [#4](https://github.com/rrweb-io/CSSOM/pull/4) [`6e61048`](https://github.com/rrweb-io/CSSOM/commit/6e61048dfdcb09f67eefeaeff2ce0d9af4032a74) Thanks [@jantimon](https://github.com/jantimon)! - fix parsing errors for nested starting-style rules
+
 ## 0.7.0
 
 ### Minor Changes
