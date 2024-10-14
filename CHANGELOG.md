@@ -1,5 +1,11 @@
 # rrweb-cssom
 
+## 0.8.0
+
+### Minor Changes
+
+- [#5](https://github.com/rrweb-io/CSSOM/pull/5) [`9f7e335`](https://github.com/rrweb-io/CSSOM/commit/9f7e335cfcbfa4c44b7088fd97d8e6677fe78c45) Thanks [@simpleman383](https://github.com/simpleman383)! - Added support for @layer CSS rule
+
 ## 0.7.1
 
 ### Patch Changes
